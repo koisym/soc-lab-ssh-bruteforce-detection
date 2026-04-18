@@ -46,3 +46,37 @@ index=* "Failed password"
 | rex field=_raw "from (?<src_ip>\d+\.\d+\.\d+\.\d+)"
 | stats count by src_ip
 | where count > 3
+
+## Results
+
+The detection successfully identified the attacking IP address and highlighted repeated failed login attempts. The lab demonstrated how brute-force activity appears in Linux logs and how a SIEM can be used to detect and alert on that behavior.
+
+---
+
+## Skills Demonstrated
+
+- Security monitoring  
+- Log analysis  
+- Splunk SPL  
+- Authentication event investigation  
+- Detection engineering  
+- Alert creation  
+- Linux administration  
+- Virtual lab setup  
+- Basic SOC workflow  
+
+---
+
+## Key Takeaways
+
+This project reinforced the importance of log visibility and proper alert tuning. Even simple attacks can be detected quickly when relevant logs are collected and reviewed. I also gained experience translating raw log events into actionable detections.
+
+---
+
+## Future Improvements
+
+- Add allowlists for known internal IPs  
+- Compare successful vs failed authentication attempts  
+- Create dashboard visualizations  
+- Generate email notifications  
+- Expand detection coverage to other protocols such as RDP or FTP
