@@ -46,6 +46,7 @@ index=* "Failed password"
 | rex field=_raw "from (?<src_ip>\d+\.\d+\.\d+\.\d+)"
 | stats count by src_ip
 | where count > 3
+```
 
 ## Results
 
