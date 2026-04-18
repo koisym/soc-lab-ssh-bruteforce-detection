@@ -1,0 +1,26 @@
+```text
+# SSH Brute Force Detection Queries
+
+# View failed SSH login attempts
+index=* "Failed password"
+
+# Extract source IP and count failed attempts
+index=* "Failed password"
+| rex field=_raw "from (?<src_ip>\d+\.\d+\.\d+\.\d+)"
+| stats count by src_ip
+| sort - count
+
+# Basic threshold detection
+index=* "Failed password"
+| rex field=_raw "from (?<src_ip>\d+\.\d+\.\d+\.\d+)"
+| stats count by src_ip
+| where count > 3
+
+# Failed login attempts over time
+index=* "Failed password"
+| timechart count
+
+# Compare successful vs failed SSH authentication events
+index=* ("Failed password" OR "Accepted password")
+| eval status=if(searchmatch("Accepted password"),"Success","Failure")
+| stats count by status
