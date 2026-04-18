@@ -2,38 +2,40 @@
 
 ## Overview
 
-I built this home lab project to practice detecting SSH brute-force attacks in a SIEM environment. The goal was to simulate repeated failed login attempts, collect the Linux authentication logs, and create detection logic in Splunk that could identify suspicious activity.
+I created this project to build hands-on experience with security monitoring and incident detection in a SOC-style lab environment. The objective was to simulate an SSH brute-force attack, ingest Linux authentication logs into Splunk, and create a detection that could identify repeated failed login attempts from the same source.
 
-This project helped me get hands-on experience with log analysis, basic detection engineering, and alert creation.
+This project gave me practical experience working with logs, building detections, and understanding how suspicious authentication activity can be identified in a SIEM.
 
 ---
 
 ## Lab Environment
 
-I used the following setup:
+The lab was built in VirtualBox using the following systems:
 
-- VirtualBox
-- Kali Linux (attacker machine)
-- Ubuntu Server (target machine)
-- Splunk Enterprise / Free
+- Kali Linux (attacker)
+- Ubuntu Server (target)
+- Splunk Enterprise / Free (SIEM)
 
-The VMs were placed on the same virtual network so they could communicate with each other.
+Both virtual machines were connected on the same virtual network to allow realistic traffic between systems.
 
 ---
 
-## What I Did
+## Project Steps
 
-### 1. Configured the Target System
-I installed and enabled SSH on the Ubuntu server so it could accept remote login attempts.
+### 1. Configured SSH on the Target System
+I installed and enabled the OpenSSH service on the Ubuntu server so it could receive remote login attempts.
 
-### 2. Simulated Failed Login Attempts
-From Kali Linux, I generated multiple failed SSH login attempts to create realistic authentication events in `/var/log/auth.log`.
+### 2. Simulated Brute-Force Activity
+Using Kali Linux, I generated multiple failed SSH login attempts against the Ubuntu server. This created authentication events inside `/var/log/auth.log`.
 
-### 3. Ingested Logs into Splunk
-I configured Splunk to monitor the Ubuntu authentication log so the events would be searchable.
+### 3. Collected Logs in Splunk
+I configured Splunk to monitor the authentication log so failed login activity could be searched and analyzed.
 
-### 4. Built Detection Logic
-I created a search that counted repeated failed login attempts by source IP address.
+### 4. Built a Detection Query
+I created a search that extracted source IP addresses from failed login events and counted repeated attempts.
+
+### 5. Created an Alert
+The detection was saved as an alert to simulate how a SOC team would be notified of suspicious login behavior.
 
 ---
 
