@@ -110,11 +110,10 @@ In a future version of this lab, I would like to:
 
 The screenshots folder includes examples of:
 
-- Failed SSH login attempts from Kali <img width="647" height="511" alt="kali-attack-hydra" src="https://github.com/user-attachments/assets/cf950586-1526-49ab-ab1a-9d9e73f81f73" />
-
-- Splunk search results for failed password events
-- Alert configuration
-- Dashboard or investigation views
+- Failed SSH login attempts from Kali <img width="644" height="512" alt="kali-attack" src="https://github.com/user-attachments/assets/ccb5a99c-aabb-413a-8354-1c23b9f62fb0" />
+- Splunk search results for failed password events <img width="1213" height="766" alt="splunk-search-results" src="https://github.com/user-attachments/assets/b2664373-672c-43b3-9586-0a231915d38d" />
+- Alert configuration<img width="802" height="577" alt="splunk-alert" src="https://github.com/user-attachments/assets/7e4eea6c-dba0-411a-840d-68386d18a776" />
+- Dashboard or investigation views<img width="1210" height="767" alt="splunk-dashboard" src="https://github.com/user-attachments/assets/244c4d4c-22ac-4875-a8d1-91e02a8f79bc" />
 
 ---
 
