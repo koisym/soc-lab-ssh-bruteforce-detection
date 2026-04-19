@@ -110,7 +110,8 @@ In a future version of this lab, I would like to:
 
 The screenshots folder includes examples of:
 
-- Failed SSH login attempts from Kali
+- Failed SSH login attempts from Kali <img width="647" height="511" alt="kali-attack-hydra" src="https://github.com/user-attachments/assets/cf950586-1526-49ab-ab1a-9d9e73f81f73" />
+
 - Splunk search results for failed password events
 - Alert configuration
 - Dashboard or investigation views
